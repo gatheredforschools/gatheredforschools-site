@@ -205,6 +205,19 @@
             <option>500 or more</option>
           </select>
         </label>
+        <label>Who referred you?
+          <select name="referred_by" required>
+            <option value="">Choose one</option>
+            <option>St. Paul Lutheran School (Peachtree City, GA)</option>
+            <option>Another school</option>
+            <option>A conference or event</option>
+            <option>Someone else</option>
+            <option>No one, I found you myself</option>
+          </select>
+        </label>
+        <label>Referred by another school or person? Tell us who (optional)
+          <input type="text" name="referred_by_name">
+        </label>
         <p class="form-error" id="form-error" role="alert" hidden></p>
         <button type="submit" class="btn-gold" id="form-submit">Request a founding spot</button>
         <p class="form-note">We only use this to contact you about Gathered for Schools. <a href="privacy.html">Privacy policy</a></p>
@@ -252,6 +265,7 @@
     var email = form.elements.email.value.trim();
     if (!name || !school || !email) { showError('Please fill in your name, school, and email.'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please check your email address.'); return; }
+    if (!form.elements.referred_by.value) { showError('Please tell us who referred you, or choose "No one, I found you myself."'); return; }
 
     btn.disabled = true;
     btn.textContent = 'Sending...';

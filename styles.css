@@ -20,7 +20,7 @@ h1,h2,h3,.display{font-family:'Fredoka',system-ui,sans-serif;font-weight:600}
 .site-header .wrap{padding-top:18px;padding-bottom:18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
 .brand{display:flex;align-items:center;gap:10px;color:#fff}
 .brand:hover{color:#fff}
-.brand-mark{width:42px;height:42px;border-radius:14px;background:var(--gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.brand-mark{width:42px;height:42px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .brand-name{font-family:'Fredoka',sans-serif;font-size:22px;font-weight:600}
 .brand-name span,.gold{color:var(--gold)}
 .main-nav{display:flex;flex-wrap:wrap;align-items:center;gap:6px 22px;font-size:15px;font-weight:700}

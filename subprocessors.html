@@ -45,7 +45,7 @@
 
 <main class="wrap page">
   <h1>Service providers</h1>
-  <p>Last updated: November 14, 2026</p>
+  <p>Last updated: November 19, 2026</p>
 
   <p>Gathered for Schools™ uses a small number of trusted companies to help run our website and service. This page lists who they are and what each one does. We never sell personal information, and we never share it with advertisers or data brokers.</p>
 
@@ -62,15 +62,15 @@
   </table>
 
   <h2>The Gathered for Schools app</h2>
-  <p>The app is in its pilot stage. The types of providers it will use are listed below. We will name each company here before any school's families are invited to the app.</p>
+  <p>The app is in its pilot stage. The providers below are named before any school's families are invited. Providers marked "Planned" are not in use yet; we will name each one here before it is used.</p>
   <table class="sp-table">
-    <thead><tr><th>Type of provider</th><th>What it does</th><th>Status</th></tr></thead>
+    <thead><tr><th>Provider</th><th>What it does</th><th>Information involved</th><th>Status</th></tr></thead>
     <tbody>
-      <tr><td>Cloud hosting and data storage</td><td>Runs the app and stores school information in the United States, encrypted in transit and at rest</td><td><span class="status planned">TO BE NAMED</span></td></tr>
-      <tr><td>Sign-in</td><td>Lets students and staff sign in with their school-issued Google accounts</td><td><span class="status planned">GOOGLE</span></td></tr>
-      <tr><td>Push notifications</td><td>Delivers app notifications to phones</td><td><span class="status planned">APPLE AND GOOGLE</span></td></tr>
-      <tr><td>Email and text message delivery</td><td>Sends invitations, sign-in codes, and school alerts</td><td><span class="status planned">TO BE NAMED</span></td></tr>
-      <tr><td>Error monitoring</td><td>Helps us find and fix problems in the app</td><td><span class="status planned">TO BE NAMED</span></td></tr>
+      <tr><td>Google (Firebase Hosting, Cloud Firestore, Cloud Storage for Firebase, Cloud Functions)</td><td>Runs the app and stores school information in the United States, encrypted in transit and at rest. Also reads each school's public Google Calendar to show upcoming events.</td><td>Names and email addresses of invited members, their role and class, school and class posts, and pictures posted by school staff</td><td><span class="status live">IN USE</span></td></tr>
+      <tr><td>Google (Firebase Authentication)</td><td>Lets staff and students sign in with their school Google accounts, and sends families an emailed sign-in link</td><td>Email address and sign-in records</td><td><span class="status live">IN USE</span></td></tr>
+      <tr><td>Apple and Google</td><td>Deliver app notifications to phones, once the phone apps are released</td><td>A device code for sending notifications</td><td><span class="status planned">PLANNED</span></td></tr>
+      <tr><td>Email and text message delivery</td><td>Sends school alerts and newsletters by email or text</td><td>Email addresses or phone numbers, and the message</td><td><span class="status planned">TO BE NAMED</span></td></tr>
+      <tr><td>Error monitoring</td><td>Helps us find and fix problems in the app</td><td>Technical details about an error</td><td><span class="status planned">TO BE NAMED</span></td></tr>
     </tbody>
   </table>
 

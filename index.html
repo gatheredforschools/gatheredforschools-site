@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=20261119">
 </head>
 <body>
 
@@ -215,7 +215,7 @@
             <option>No one, I found you myself</option>
           </select>
         </label>
-        <label id="referred-detail" hidden><span id="referred-detail-text">Which school referred you?</span>
+        <label id="referred-detail" hidden style="display:none"><span id="referred-detail-text">Which school referred you?</span>
           <input type="text" name="referred_by_name">
         </label>
         <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -267,6 +267,7 @@
   function updateDetail() {
     var prompt = detailPrompts[referred.value];
     detail.hidden = !prompt;
+    detail.style.display = prompt ? 'flex' : 'none';
     if (prompt) { detailText.textContent = prompt; }
     else { form.elements.referred_by_name.value = ''; }
   }

@@ -215,7 +215,7 @@
             <option>No one, I found you myself</option>
           </select>
         </label>
-        <label>Referred by another school or person? Tell us who (optional)
+        <label id="referred-detail" hidden><span id="referred-detail-text">Which school referred you?</span>
           <input type="text" name="referred_by_name">
         </label>
         <p class="form-error" id="form-error" role="alert" hidden></p>
@@ -256,6 +256,23 @@
 
   function showError(msg) { err.textContent = msg; err.hidden = false; }
 
+  var referred = form.elements.referred_by;
+  var detail = document.getElementById('referred-detail');
+  var detailText = document.getElementById('referred-detail-text');
+  var detailPrompts = {
+    'Another school': 'Which school referred you?',
+    'A conference or event': 'Which conference or event?',
+    'Someone else': 'Who referred you?'
+  };
+  function updateDetail() {
+    var prompt = detailPrompts[referred.value];
+    detail.hidden = !prompt;
+    if (prompt) { detailText.textContent = prompt; }
+    else { form.elements.referred_by_name.value = ''; }
+  }
+  referred.addEventListener('change', updateDetail);
+  updateDetail();
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     err.hidden = true;
@@ -266,6 +283,7 @@
     if (!name || !school || !email) { showError('Please fill in your name, school, and email.'); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { showError('Please check your email address.'); return; }
     if (!form.elements.referred_by.value) { showError('Please tell us who referred you, or choose "No one, I found you myself."'); return; }
+    if (!detail.hidden && !form.elements.referred_by_name.value.trim()) { showError('Please answer: ' + detailText.textContent); return; }
 
     btn.disabled = true;
     btn.textContent = 'Sending...';
